@@ -33,7 +33,7 @@
             </fieldset>
 
             <AppToast v-if="cartSubmitted">
-                Order submitted <br/>
+                Order submitted <br />
                 Check out more <nuxt-link to="/restaurants">restaurants</nuxt-link>
             </AppToast>
         </section>
@@ -92,13 +92,14 @@ export default {
                 item: this.currentItem.item,
                 count: this.count,
                 options: this.itemOptions,
-                addons: this.itemAddons,
-                combinedPrice: this.combinedPrice
+                addOns: this.itemAddons,
+                combinedPrice: this.combinedPrice,
             };
 
             this.cartSubmitted = true;
-        }
-    }
+            this.$store.commit("addToCart", formOutput);
+        },
+    },
 
 };
 </script>
